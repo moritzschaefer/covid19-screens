@@ -1,0 +1,40 @@
+assembly: cs101
+experiment: VERO_CRISPRko_rra_oc43_2nd
+fastqc:
+  Cov-1_S4:
+  - qc/Cov-1_S4_0/Cov-1_S4_fastqc/fastqc_data.txt
+  Cov-2_S5:
+  - qc/Cov-2_S5_0/Cov-2_S5_fastqc/fastqc_data.txt
+  Cov-3_S6:
+  - qc/Cov-3_S6_0/Cov-3_S6_fastqc/fastqc_data.txt
+  Cov-4_S7:
+  - qc/Cov-4_S7_0/Cov-4_S7_fastqc/fastqc_data.txt
+  OC43-nd-1_S12:
+  - qc/OC43-nd-1_S12_0/OC43-nd-1_S12_fastqc/fastqc_data.txt
+  OC43-nd-2_S13:
+  - qc/OC43-nd-2_S13_0/OC43-nd-2_S13_fastqc/fastqc_data.txt
+  OC43-nd-3_S14:
+  - qc/OC43-nd-3_S14_0/OC43-nd-3_S14_fastqc/fastqc_data.txt
+  OC43-nd-4_S15:
+  - qc/OC43-nd-4_S15_0/OC43-nd-4_S15_fastqc/fastqc_data.txt
+  OC43-st-1_S8:
+  - qc/OC43-st-1_S8_0/OC43-st-1_S8_fastqc/fastqc_data.txt
+  OC43-st-2_S9:
+  - qc/OC43-st-2_S9_0/OC43-st-2_S9_fastqc/fastqc_data.txt
+  OC43-st-3_S10:
+  - qc/OC43-st-3_S10_0/OC43-st-3_S10_fastqc/fastqc_data.txt
+  OC43-st-4_S11:
+  - qc/OC43-st-4_S11_0/OC43-st-4_S11_fastqc/fastqc_data.txt
+  T0puro1_S1:
+  - qc/T0puro1_S1_0/T0puro1_S1_fastqc/fastqc_data.txt
+  T0puro2_S2:
+  - qc/T0puro2_S2_0/T0puro2_S2_fastqc/fastqc_data.txt
+  T0puro3_S3:
+  - qc/T0puro3_S3_0/T0puro3_S3_fastqc/fastqc_data.txt
+sgrnas:
+  counts: count/all.count_normalized.txt
+  mapstats: count/all.countsummary.txt
+species: chlorocercus_sabeaus
+targets:
+  genes: true
+  results: test/VERO_CRISPRko_rra_oc43_2nd.gene_summary.txt

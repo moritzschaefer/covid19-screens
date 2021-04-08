@@ -4,6 +4,9 @@
 *.gz
 logs/
 results/
+count/
+qc/
+test/
 .snakemake/
 *.fa
 sras/

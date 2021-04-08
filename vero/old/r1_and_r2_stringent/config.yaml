@@ -1,0 +1,92 @@
+paired:
+  Cov-1_S4:
+  - download_raw/NS2052_4_Cov-1-R04_L01-L02_L002_ds.5a40c063a38b48e1a0092ccaa492ffa1/Cov-1_S4_L002_R2_001.fastq.gz
+  - download_raw/NS2052_4_Cov-1-R04_L01-L02_L001_ds.58da209763174c5a94b4b60060313666/Cov-1_S4_L001_R2_001.fastq.gz
+  Cov-2_S5:
+  - download_raw/NS2052_5_Cov-2-R05_L01-L02_L002_ds.fd72057182cb4b648a2d606031b86036/Cov-2_S5_L002_R2_001.fastq.gz
+  - download_raw/NS2052_5_Cov-2-R05_L01-L02_L001_ds.480d4356c94c4608b27934f5202c4e10/Cov-2_S5_L001_R2_001.fastq.gz
+  Cov-3_S6:
+  - download_raw/NS2052_6_Cov-3-R06_L01-L02_L002_ds.78399b7f7ad544e28cf04f966f24c54f/Cov-3_S6_L002_R2_001.fastq.gz
+  - download_raw/NS2052_6_Cov-3-R06_L01-L02_L001_ds.206a05a6669f4f1b89381f993ef5b0cf/Cov-3_S6_L001_R2_001.fastq.gz
+  Cov-4_S7:
+  - download_raw/NS2052_7_Cov-4-R07_L01-L02_L001_ds.ea1c6b85369c457a9a1edd437dc25fc1/Cov-4_S7_L001_R2_001.fastq.gz
+  - download_raw/NS2052_7_Cov-4-R07_L01-L02_L002_ds.3fc7273413ed46bb9ade5010c5b36f9a/Cov-4_S7_L002_R2_001.fastq.gz
+  OC43-nd-1_S12:
+  - download_raw/NS2052_12_OC43-nd-1-R12_L01-L02_L001_ds.0dde961c3dc34e6b808c44d9550a2682/OC43-nd-1_S12_L001_R2_001.fastq.gz
+  - download_raw/NS2052_12_OC43-nd-1-R12_L01-L02_L002_ds.373bf604f7fe4c30841ba70e4af7b0e7/OC43-nd-1_S12_L002_R2_001.fastq.gz
+  OC43-nd-2_S13:
+  - download_raw/NS2052_13_OC43-nd-2-R13_L01-L02_L001_ds.217ae43e9d8e452da5a5b79d0789917e/OC43-nd-2_S13_L001_R2_001.fastq.gz
+  - download_raw/NS2052_13_OC43-nd-2-R13_L01-L02_L002_ds.71348f0cd2b543e99673d35a3e92863f/OC43-nd-2_S13_L002_R2_001.fastq.gz
+  OC43-nd-3_S14:
+  - download_raw/NS2052_14_OC43-nd-3-R14_L01-L02_L002_ds.65bc1068a7c449308baf871c2a2c6fc4/OC43-nd-3_S14_L002_R2_001.fastq.gz
+  - download_raw/NS2052_14_OC43-nd-3-R14_L01-L02_L001_ds.1ce4a361de734e6c8c7d6eedd01a3e9d/OC43-nd-3_S14_L001_R2_001.fastq.gz
+  OC43-nd-4_S15:
+  - download_raw/NS2052_15_OC43-nd-4-R15_L01-L02_L002_ds.ab74918b18a6450ea3e1e231290cbf0f/OC43-nd-4_S15_L002_R2_001.fastq.gz
+  - download_raw/NS2052_15_OC43-nd-4-R15_L01-L02_L001_ds.8f16026b588640c7bd7989df19f84aa8/OC43-nd-4_S15_L001_R2_001.fastq.gz
+  OC43-st-1_S8:
+  - download_raw/NS2052_8_OC43-st-1-R08_L01-L02_L001_ds.e5296a47aa904f8f8b35a7757bb2136d/OC43-st-1_S8_L001_R2_001.fastq.gz
+  - download_raw/NS2052_8_OC43-st-1-R08_L01-L02_L002_ds.947e79b10b5748e2b87ff78e2bc18301/OC43-st-1_S8_L002_R2_001.fastq.gz
+  OC43-st-2_S9:
+  - download_raw/NS2052_9_OC43-st-2-R09_L01-L02_L001_ds.15ab4a4d6c8e423cad359c464ef6d728/OC43-st-2_S9_L001_R2_001.fastq.gz
+  - download_raw/NS2052_9_OC43-st-2-R09_L01-L02_L002_ds.08c547a3aeab49619ca817fbaacda21c/OC43-st-2_S9_L002_R2_001.fastq.gz
+  OC43-st-3_S10:
+  - download_raw/NS2052_10_OC43-st-3-R10_L01-L02_L001_ds.b05df1616e7b460e88ee6846772b021e/OC43-st-3_S10_L001_R2_001.fastq.gz
+  - download_raw/NS2052_10_OC43-st-3-R10_L01-L02_L002_ds.bafe1453ec5a4710b1f6f1039f42fda2/OC43-st-3_S10_L002_R2_001.fastq.gz
+  OC43-st-4_S11:
+  - download_raw/NS2052_11_OC43-st-4-R11_L01-L02_L001_ds.9c78299fcb404be286fa8e119cdfa74a/OC43-st-4_S11_L001_R2_001.fastq.gz
+  - download_raw/NS2052_11_OC43-st-4-R11_L01-L02_L002_ds.cca66e57719645e693fbf9ad31392edd/OC43-st-4_S11_L002_R2_001.fastq.gz
+  T0puro1_S1:
+  - download_raw/NS2052_1_T0puro1-R01_L01-L02_L001_ds.99afdb68bfca44dba7fcf4980d6cab0b/T0puro1_S1_L001_R2_001.fastq.gz
+  - download_raw/NS2052_1_T0puro1-R01_L01-L02_L002_ds.0ff92528ba5044c49ba0eba6423e9068/T0puro1_S1_L002_R2_001.fastq.gz
+  T0puro2_S2:
+  - download_raw/NS2052_2_T0puro2-R02_L01-L02_L001_ds.786caed43e9b4288aeba33442dbc0870/T0puro2_S2_L001_R2_001.fastq.gz
+  - download_raw/NS2052_2_T0puro2-R02_L01-L02_L002_ds.090d91d8de1c4f4c8d8eadf0d8d49663/T0puro2_S2_L002_R2_001.fastq.gz
+  T0puro3_S3:
+  - download_raw/NS2052_3_T0puro3-R03_L01-L02_L002_ds.396ad0acde4c480baf99e21c13957fe6/T0puro3_S3_L002_R2_001.fastq.gz
+  - download_raw/NS2052_3_T0puro3-R03_L01-L02_L001_ds.47f8223714c84d109242c95fa5ee4954/T0puro3_S3_L001_R2_001.fastq.gz
+samples:
+  Cov-1_S4:
+  - download_raw/NS2052_4_Cov-1-R04_L01-L02_L002_ds.5a40c063a38b48e1a0092ccaa492ffa1/Cov-1_S4_L002_R1_001.fastq.gz
+  - download_raw/NS2052_4_Cov-1-R04_L01-L02_L001_ds.58da209763174c5a94b4b60060313666/Cov-1_S4_L001_R1_001.fastq.gz
+  Cov-2_S5:
+  - download_raw/NS2052_5_Cov-2-R05_L01-L02_L002_ds.fd72057182cb4b648a2d606031b86036/Cov-2_S5_L002_R1_001.fastq.gz
+  - download_raw/NS2052_5_Cov-2-R05_L01-L02_L001_ds.480d4356c94c4608b27934f5202c4e10/Cov-2_S5_L001_R1_001.fastq.gz
+  Cov-3_S6:
+  - download_raw/NS2052_6_Cov-3-R06_L01-L02_L002_ds.78399b7f7ad544e28cf04f966f24c54f/Cov-3_S6_L002_R1_001.fastq.gz
+  - download_raw/NS2052_6_Cov-3-R06_L01-L02_L001_ds.206a05a6669f4f1b89381f993ef5b0cf/Cov-3_S6_L001_R1_001.fastq.gz
+  Cov-4_S7:
+  - download_raw/NS2052_7_Cov-4-R07_L01-L02_L001_ds.ea1c6b85369c457a9a1edd437dc25fc1/Cov-4_S7_L001_R1_001.fastq.gz
+  - download_raw/NS2052_7_Cov-4-R07_L01-L02_L002_ds.3fc7273413ed46bb9ade5010c5b36f9a/Cov-4_S7_L002_R1_001.fastq.gz
+  OC43-nd-1_S12:
+  - download_raw/NS2052_12_OC43-nd-1-R12_L01-L02_L001_ds.0dde961c3dc34e6b808c44d9550a2682/OC43-nd-1_S12_L001_R1_001.fastq.gz
+  - download_raw/NS2052_12_OC43-nd-1-R12_L01-L02_L002_ds.373bf604f7fe4c30841ba70e4af7b0e7/OC43-nd-1_S12_L002_R1_001.fastq.gz
+  OC43-nd-2_S13:
+  - download_raw/NS2052_13_OC43-nd-2-R13_L01-L02_L001_ds.217ae43e9d8e452da5a5b79d0789917e/OC43-nd-2_S13_L001_R1_001.fastq.gz
+  - download_raw/NS2052_13_OC43-nd-2-R13_L01-L02_L002_ds.71348f0cd2b543e99673d35a3e92863f/OC43-nd-2_S13_L002_R1_001.fastq.gz
+  OC43-nd-3_S14:
+  - download_raw/NS2052_14_OC43-nd-3-R14_L01-L02_L002_ds.65bc1068a7c449308baf871c2a2c6fc4/OC43-nd-3_S14_L002_R1_001.fastq.gz
+  - download_raw/NS2052_14_OC43-nd-3-R14_L01-L02_L001_ds.1ce4a361de734e6c8c7d6eedd01a3e9d/OC43-nd-3_S14_L001_R1_001.fastq.gz
+  OC43-nd-4_S15:
+  - download_raw/NS2052_15_OC43-nd-4-R15_L01-L02_L002_ds.ab74918b18a6450ea3e1e231290cbf0f/OC43-nd-4_S15_L002_R1_001.fastq.gz
+  - download_raw/NS2052_15_OC43-nd-4-R15_L01-L02_L001_ds.8f16026b588640c7bd7989df19f84aa8/OC43-nd-4_S15_L001_R1_001.fastq.gz
+  OC43-st-1_S8:
+  - download_raw/NS2052_8_OC43-st-1-R08_L01-L02_L001_ds.e5296a47aa904f8f8b35a7757bb2136d/OC43-st-1_S8_L001_R1_001.fastq.gz
+  - download_raw/NS2052_8_OC43-st-1-R08_L01-L02_L002_ds.947e79b10b5748e2b87ff78e2bc18301/OC43-st-1_S8_L002_R1_001.fastq.gz
+  OC43-st-2_S9:
+  - download_raw/NS2052_9_OC43-st-2-R09_L01-L02_L001_ds.15ab4a4d6c8e423cad359c464ef6d728/OC43-st-2_S9_L001_R1_001.fastq.gz
+  - download_raw/NS2052_9_OC43-st-2-R09_L01-L02_L002_ds.08c547a3aeab49619ca817fbaacda21c/OC43-st-2_S9_L002_R1_001.fastq.gz
+  OC43-st-3_S10:
+  - download_raw/NS2052_10_OC43-st-3-R10_L01-L02_L001_ds.b05df1616e7b460e88ee6846772b021e/OC43-st-3_S10_L001_R1_001.fastq.gz
+  - download_raw/NS2052_10_OC43-st-3-R10_L01-L02_L002_ds.bafe1453ec5a4710b1f6f1039f42fda2/OC43-st-3_S10_L002_R1_001.fastq.gz
+  OC43-st-4_S11:
+  - download_raw/NS2052_11_OC43-st-4-R11_L01-L02_L001_ds.9c78299fcb404be286fa8e119cdfa74a/OC43-st-4_S11_L001_R1_001.fastq.gz
+  - download_raw/NS2052_11_OC43-st-4-R11_L01-L02_L002_ds.cca66e57719645e693fbf9ad31392edd/OC43-st-4_S11_L002_R1_001.fastq.gz
+  T0puro1_S1:
+  - download_raw/NS2052_1_T0puro1-R01_L01-L02_L001_ds.99afdb68bfca44dba7fcf4980d6cab0b/T0puro1_S1_L001_R1_001.fastq.gz
+  - download_raw/NS2052_1_T0puro1-R01_L01-L02_L002_ds.0ff92528ba5044c49ba0eba6423e9068/T0puro1_S1_L002_R1_001.fastq.gz
+  T0puro2_S2:
+  - download_raw/NS2052_2_T0puro2-R02_L01-L02_L001_ds.786caed43e9b4288aeba33442dbc0870/T0puro2_S2_L001_R1_001.fastq.gz
+  - download_raw/NS2052_2_T0puro2-R02_L01-L02_L002_ds.090d91d8de1c4f4c8d8eadf0d8d49663/T0puro2_S2_L002_R1_001.fastq.gz
+  T0puro3_S3:
+  - download_raw/NS2052_3_T0puro3-R03_L01-L02_L002_ds.396ad0acde4c480baf99e21c13957fe6/T0puro3_S3_L002_R1_001.fastq.gz
+  - download_raw/NS2052_3_T0puro3-R03_L01-L02_L001_ds.47f8223714c84d109242c95fa5ee4954/T0puro3_S3_L001_R1_001.fastq.gz
