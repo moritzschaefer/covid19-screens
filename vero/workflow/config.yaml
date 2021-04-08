@@ -1,10 +1,10 @@
 # General configuration:
 
 # Path to library design file (csv or tab-separated txt format, columns: id, sequence, gene)
-library: cs_sgrnas_dropped2012dups.csv
-# Species to use for linkouts in VISPR (e.g. mus_musculus, homo_sapiens, ...)
+library: cs_sgrnas_grouped_kos.csv
+# Species to use for linkouts in VISPR (e.g. mus_musculus, homo_sapiens, ...), 
 species: chlorocebus_sabaeus
-# Genome assembly to use for linkouts in VISPR (e.g. hg19, hg38, mm9, mm10, ...)
+# Genome assembly to use for linkouts in VISPR (e.g. hg19, hg38, mm9, mm10, ...) TODO not sure about the version...
 assembly: cs101
 
 # Configuration of knockout target display in VISPR
