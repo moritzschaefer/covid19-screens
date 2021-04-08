@@ -1,0 +1,7 @@
+Samples	baseline	cov_1st	
+D10-Cont1	1	0
+D10-Cont2	1	0
+D10-Cont3	1	0
+BrCov-ST1	1	1
+BrCov-ST2	1	1
+BrCov-ST3	1	1

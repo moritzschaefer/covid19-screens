@@ -1,0 +1,184 @@
+# General configuration:
+
+# Path to library design file (csv or tab-separated txt format, columns: id, sequence, gene)
+library: brunello.txt
+# Species to use for linkouts in VISPR (e.g. mus_musculus, homo_sapiens, ...)
+species: homo_sapiens
+# Genome assembly to use for linkouts in VISPR (e.g. hg19, hg38, mm9, mm10, ...)
+assembly: hg38
+
+# Configuration of knockout target display in VISPR
+targets:
+    # if screening genes, set this to true for proper linkouts to GeneMANIA and Ensembl in VISPR
+    genes: true
+    # file with genes to hide per default in VISPR (optional, one gene per line)
+    #controls: ribosomal_genes.txt
+
+# Configuration of sgRNAs
+sgrnas:
+    # estimate sgRNA knockout efficiency during EM-procedure of MAGeCK-MLE
+    update-efficiency: false
+    # trim the 5 prime end to get rid of barcode sequences in the reads
+    # if a number (instead of AUTO) is specified, use quotes; for example:
+    # trim-5: "0"
+    trim-5: AUTO
+    # specify the length of the sgRNAs (without PAM sequence)
+    len: AUTO
+    # sequencing adapter that shall be removed from reads before processing with MAGeCK (optional)
+    #adapter: ACGGCTAGCTGA
+    #
+    # Use pre-computed sgrnas to annotate the library? By default it's false. 
+    # Only certain assemblies (hg19, hg38, mm9, mm10) and certain sgRNA length (19, 20) are supported
+    annotate-sgrna: false
+    # Use pre-computed sgrna efficiency as an initial value of knockout efficiency?
+    # Need to set annotate-sgrna to true as well. 
+    # If you need the sgRNA efficiency to be updated, set update-efficiency to true
+    annotate-sgrna-efficiency: false
+    # instead of downloading the sgrna annotation library from bitbucket,
+    # provide either the name of the file used for annotation,
+    # or the folder name where MAGeCK-VISPR will search the corresponding annotation library from that folder
+    #annotation-sgrna-file: /dev/null
+    #annotation-sgrna-folder: /src/exome_scan
+
+
+
+
+# ATTENTION: You should and only should choose one type of input file between "samples" and "counts".
+# Configuration of samples (Cannot set "counts" as valid at the same time!)
+samples:
+    # The following sample information was inferred from the given FASTQ files.
+    # Adjust it according to your needs (e.g. providing descriptive sample names and grouping replicates together).
+    BrT0puro1:
+        - ../BRU2_1-BrT0puro1_R01_L003_L003_ds.f91078fc82064c9f9efab743ace39b2f/BrT0puro1_S91_L003_R1_001.fastq.gz
+    BrT0puro2:
+        - ../BRU2_2-BrT0puro2_R02_L003_L003_ds.1a43f5ace7754dca87d60e1adaffd79b/BrT0puro2_S92_L003_R1_001.fastq.gz
+    BrT0puro3:
+        - ../BRU2_3-BrT0puro3_R03_L003_L003_ds.c220aee172f342f7bd7a52ccc7614a10/BrT0puro3_S93_L003_R1_001.fastq.gz
+    D10-Cont1:
+        - ../BRU2_4-D10-Cont1_R04_L003_L003_ds.cabb9c4f38fc40779700e73d4ee0dafe/D10-Cont1_S94_L003_R1_001.fastq.gz
+    D10-Cont2:
+        - ../BRU2_5-D10-Cont2_R05_L003_L003_ds.3fe7843e035d4ea28c44018c4dc19e52/D10-Cont2_S95_L003_R1_001.fastq.gz
+    D10-Cont3:
+        - ../BRU2_6-D10-Cont3_R06_L003_L003_ds.3ddbeccdac4345119ab06706666829de/D10-Cont3_S96_L003_R1_001.fastq.gz
+    D15-Cont1:
+        - ../BRU2_7-D15-Cont1_R07_L003_L003_ds.dba111158a3048c6a5a749a8ba27a54d/D15-Cont1_S97_L003_R1_001.fastq.gz
+    D15-Cont2:
+        - ../BRU2_8-D15-Cont2_R08_L003_L003_ds.1b8b7ec2e4bc480fb4240b43015463da/D15-Cont2_S98_L003_R1_001.fastq.gz
+    D15-Cont3:
+        - ../BRU2_9-D15-Cont3_R09_L003_L003_ds.1a8f19c3906847939e06ecb1de9b83a0/D15-Cont3_S99_L003_R1_001.fastq.gz
+    BrCov-ST1:
+        - ../BRU2_10-BrCov-ST1_R10_L003_L003_ds.3288aad7ec0946f9b5056666d21809ee/BrCov-ST1_S100_L003_R1_001.fastq.gz
+    BrCov-ST2:
+        - ../BRU2_11-BrCov-ST2_R11_L003_L003_ds.cb614ca742ee4198a1884ffc93ec5120/BrCov-ST2_S101_L003_R1_001.fastq.gz
+    BrCov-ST3:
+        - ../BRU2_12-BrCov-ST3_R12_L003_L003_ds.820814b8e60b432ba7f0d82aa4198375/BrCov-ST3_S102_L003_R1_001.fastq.gz
+    BrCov-ND1:
+        - ../BRU2_13-BrCov-ND1_R13_L003_L003_ds.3669f89d5f34455a8992c0b099f37294/BrCov-ND1_S103_L003_R1_001.fastq.gz
+    BrCov-ND2:
+        - ../BRU2_14-BrCov-ND2_R14_L003_L003_ds.6f8338c252f44000bfce4ca68a1ec585/BrCov-ND2_S104_L003_R1_001.fastq.gz
+    BrCov-ND3:
+        - ../BRU2_15-BrCov-ND3_R20_L003_L003_ds.8c1918751c2c4e6488911ef202f592b4/BrCov-ND3_S105_L003_R1_001.fastq.gz
+    BrBact1:
+        - ../BRU2_16-BrBact1_R21_L003_L003_ds.42cdba590a35453cb4a5c62722708b49/BrBact1_S106_L003_R1_001.fastq.gz
+    BrBact2:
+        - ../BRU2_17-BrBact2_R22_L003_L003_ds.d7941d641a584475a947d31207bed95b/BrBact2_S107_L003_R1_001.fastq.gz
+
+
+# Provide paired fastq files if pair-end sequencing data is available.
+# paired:
+#     # provide a label and a paths to the paired fastq files for each sample
+#     A: path/to/A_R2.fastq
+#     B: path/to/B_R2.fastq
+#     C:
+#        - path/to/C.1_R2.fastq
+#         - path/to/C.2_R2.fastq
+
+# Specify whether report valid alignments per pair (count when both end reads mapped), when paired fastq files are provided .
+countpair: false
+
+# Instead of providing fastq files, you can also provide your own normalized (or unnormalized) count matrix (Cannot set "samples" as valid at the same time!).
+# If you do not want MAGeCK to normalize the counts, make sure to set up norm_methd to none
+# Support QC from count matrix
+# counts: rawcount/rawcount.txt
+
+# Provide mageck count --day0-label (optional). Multiple labels should be seperated with comma.
+# day0label: BrT0puro1,BrT0puro2,BrT0puro3
+
+
+# Provide normalization methods (none, control, median) and a list of negative control sgrnas (if norm_method=control). 
+# These parameters will be applied to mageck_count, mageck_rra and mageck_mle modules.
+# Note that if this option is not specified a default median normalization will be used.
+# norm_method: control
+# control_sgrna: lib/hg19_library_1.aavs1.txt
+
+# Run mle with multi-thread. Default thread number is 1.
+# When this parameter is set (e.g., threads: 4), make sure to specify the cores in running snakemake (snakemake --cores 4)
+threads: 20
+
+# Provide a batch matrix if the samples need to be batch corrected (optional).
+# The format should be as follows (tab-separated):
+# sample          batch   covariate 1 ...
+# Sample 1        1       0           ...
+# Sample 2        2       0           ...
+# Sample 3        2       1           ...
+#
+# The first column must refer to the samples defined above.
+# batchmatrix: path/to/batchmatrix.txt
+#
+
+# copy number variation correction
+# Setting correct_cnv to true will allow CNV correction for both RRA and MLE
+#
+# to overwrite this option, you can use snakemake command line:
+# snakemake --config correct_cnv=true cnv_norm=target/cnv/file
+correct_cnv: false
+cnv_norm: /dev/null
+
+# the following cnv_cell_line is only required when performing CNV correction in RRA
+# it's not required for MLE
+cnv_cell_line: HL60
+
+
+# Additional parameters to run MLE or RRA
+# Note that additional_mle_rra_parameter is no longer used since MLE and RRA should be specified separately.
+# additional_mle_parameter: --max-sgrnapergene-permutation 30
+# additional_rra_parameter: --remove-zero both --additional-rra-parameters "--max-sgrnapergene-permutation 200"
+
+# Configuration of experiments.
+# An experiment defines the comparison that shall be analyzed with MAGeCK.
+# You can define as many experiments as you want.
+# You can define either MAGeCK-RRA or MAGeCK-MLE experiments, but cannot define both in a single configuration file.
+experiments:
+    # provide a descriptive name for your experiment (it will show up in VISPR)
+    # "mle":
+        # This is a MAGeCK-MLE experiment.
+        # Here, users can either specify a day0label, or a design matrix file (see http://mageck.sourceforge.net for details).
+        # if day0label is specified, use an empty file (like /dev/null) as a design matrix file.
+        # Sample names in the design matrix must refer to the samples defined above.
+        # designmatrix: /dev/null
+    "HEK_CRISPRko2_rra_1st":
+        treatment:
+            - BrCov-ST1
+            - BrCov-ST2
+            - BrCov-ST3
+        control:
+            - D10-Cont1
+            - D10-Cont2
+            - D10-Cont3
+    "HEK_CRISPRko2_rra_2nd":
+        treatment:
+            - BrCov-ND1
+            - BrCov-ND2
+            - BrCov-ND3
+        control:
+            - D15-Cont1
+            - D15-Cont2
+            - D15-Cont3
+    "HEK_CRISPRko2_bact":
+        treatment:
+            - BrBact1
+            - BrBact2
+        control:
+            - BrT0puro1
+            - BrT0puro2
+            - BrT0puro3

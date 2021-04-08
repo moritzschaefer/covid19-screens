@@ -1,0 +1,9 @@
+*.tar.gz
+*.tar.bz2
+*.fastq
+*.gz
+logs/
+results/
+.snakemake/
+*.fa
+sras/

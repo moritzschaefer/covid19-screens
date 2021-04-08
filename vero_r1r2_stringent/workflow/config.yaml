@@ -1,0 +1,236 @@
+# General configuration:
+
+# Path to library design file (csv or tab-separated txt format, columns: id, sequence, gene)
+library: cs_sgrnas_grouped_kos.csv
+# Species to use for linkouts in VISPR (e.g. mus_musculus, homo_sapiens, ...)
+species: chlorocebus_sabaeus
+# Genome assembly to use for linkouts in VISPR (e.g. hg19, hg38, mm9, mm10, ...)
+assembly: cs101
+
+# Configuration of knockout target display in VISPR
+targets:
+    # if screening genes, set this to true for proper linkouts to GeneMANIA and Ensembl in VISPR
+    genes: true
+    # file with genes to hide per default in VISPR (optional, one gene per line)
+    #controls: ribosomal_genes.txt
+
+# Configuration of sgRNAs
+sgrnas:
+    # estimate sgRNA knockout efficiency during EM-procedure of MAGeCK-MLE
+    update-efficiency: false
+    # trim the 5 prime end to get rid of barcode sequences in the reads
+    # if a number (instead of AUTO) is specified, use quotes; for example:
+    # trim-5: "0"
+    trim-5: AUTO
+    # specify the length of the sgRNAs (without PAM sequence)
+    len: AUTO
+    # sequencing adapter that shall be removed from reads before processing with MAGeCK (optional)
+    #adapter: ACGGCTAGCTGA
+    #
+    # Use pre-computed sgrnas to annotate the library? By default it's false. 
+    # Only certain assemblies (hg19, hg38, mm9, mm10) and certain sgRNA length (19, 20) are supported
+    annotate-sgrna: false
+    # Use pre-computed sgrna efficiency as an initial value of knockout efficiency?
+    # Need to set annotate-sgrna to true as well. 
+    # If you need the sgRNA efficiency to be updated, set update-efficiency to true
+    annotate-sgrna-efficiency: false
+    # instead of downloading the sgrna annotation library from bitbucket,
+    # provide either the name of the file used for annotation,
+    # or the folder name where MAGeCK-VISPR will search the corresponding annotation library from that folder
+    #annotation-sgrna-file: /dev/null
+    #annotation-sgrna-folder: /src/exome_scan
+
+
+
+
+# ATTENTION: You should and only should choose one type of input file between "samples" and "counts".
+# Configuration of samples (Cannot set "counts" as valid at the same time!)
+paired:
+  Cov-1_S4:
+  - download_raw/NS2052_4_Cov-1-R04_L01-L02_L002_ds.5a40c063a38b48e1a0092ccaa492ffa1/Cov-1_S4_L002_R2_001.fastq.gz
+  - download_raw/NS2052_4_Cov-1-R04_L01-L02_L001_ds.58da209763174c5a94b4b60060313666/Cov-1_S4_L001_R2_001.fastq.gz
+  Cov-2_S5:
+  - download_raw/NS2052_5_Cov-2-R05_L01-L02_L002_ds.fd72057182cb4b648a2d606031b86036/Cov-2_S5_L002_R2_001.fastq.gz
+  - download_raw/NS2052_5_Cov-2-R05_L01-L02_L001_ds.480d4356c94c4608b27934f5202c4e10/Cov-2_S5_L001_R2_001.fastq.gz
+  Cov-3_S6:
+  - download_raw/NS2052_6_Cov-3-R06_L01-L02_L002_ds.78399b7f7ad544e28cf04f966f24c54f/Cov-3_S6_L002_R2_001.fastq.gz
+  - download_raw/NS2052_6_Cov-3-R06_L01-L02_L001_ds.206a05a6669f4f1b89381f993ef5b0cf/Cov-3_S6_L001_R2_001.fastq.gz
+  Cov-4_S7:
+  - download_raw/NS2052_7_Cov-4-R07_L01-L02_L001_ds.ea1c6b85369c457a9a1edd437dc25fc1/Cov-4_S7_L001_R2_001.fastq.gz
+  - download_raw/NS2052_7_Cov-4-R07_L01-L02_L002_ds.3fc7273413ed46bb9ade5010c5b36f9a/Cov-4_S7_L002_R2_001.fastq.gz
+  OC43-nd-1_S12:
+  - download_raw/NS2052_12_OC43-nd-1-R12_L01-L02_L001_ds.0dde961c3dc34e6b808c44d9550a2682/OC43-nd-1_S12_L001_R2_001.fastq.gz
+  - download_raw/NS2052_12_OC43-nd-1-R12_L01-L02_L002_ds.373bf604f7fe4c30841ba70e4af7b0e7/OC43-nd-1_S12_L002_R2_001.fastq.gz
+  OC43-nd-2_S13:
+  - download_raw/NS2052_13_OC43-nd-2-R13_L01-L02_L001_ds.217ae43e9d8e452da5a5b79d0789917e/OC43-nd-2_S13_L001_R2_001.fastq.gz
+  - download_raw/NS2052_13_OC43-nd-2-R13_L01-L02_L002_ds.71348f0cd2b543e99673d35a3e92863f/OC43-nd-2_S13_L002_R2_001.fastq.gz
+  OC43-nd-3_S14:
+  - download_raw/NS2052_14_OC43-nd-3-R14_L01-L02_L002_ds.65bc1068a7c449308baf871c2a2c6fc4/OC43-nd-3_S14_L002_R2_001.fastq.gz
+  - download_raw/NS2052_14_OC43-nd-3-R14_L01-L02_L001_ds.1ce4a361de734e6c8c7d6eedd01a3e9d/OC43-nd-3_S14_L001_R2_001.fastq.gz
+  OC43-nd-4_S15:
+  - download_raw/NS2052_15_OC43-nd-4-R15_L01-L02_L002_ds.ab74918b18a6450ea3e1e231290cbf0f/OC43-nd-4_S15_L002_R2_001.fastq.gz
+  - download_raw/NS2052_15_OC43-nd-4-R15_L01-L02_L001_ds.8f16026b588640c7bd7989df19f84aa8/OC43-nd-4_S15_L001_R2_001.fastq.gz
+  OC43-st-1_S8:
+  - download_raw/NS2052_8_OC43-st-1-R08_L01-L02_L001_ds.e5296a47aa904f8f8b35a7757bb2136d/OC43-st-1_S8_L001_R2_001.fastq.gz
+  - download_raw/NS2052_8_OC43-st-1-R08_L01-L02_L002_ds.947e79b10b5748e2b87ff78e2bc18301/OC43-st-1_S8_L002_R2_001.fastq.gz
+  OC43-st-2_S9:
+  - download_raw/NS2052_9_OC43-st-2-R09_L01-L02_L001_ds.15ab4a4d6c8e423cad359c464ef6d728/OC43-st-2_S9_L001_R2_001.fastq.gz
+  - download_raw/NS2052_9_OC43-st-2-R09_L01-L02_L002_ds.08c547a3aeab49619ca817fbaacda21c/OC43-st-2_S9_L002_R2_001.fastq.gz
+  OC43-st-3_S10:
+  - download_raw/NS2052_10_OC43-st-3-R10_L01-L02_L001_ds.b05df1616e7b460e88ee6846772b021e/OC43-st-3_S10_L001_R2_001.fastq.gz
+  - download_raw/NS2052_10_OC43-st-3-R10_L01-L02_L002_ds.bafe1453ec5a4710b1f6f1039f42fda2/OC43-st-3_S10_L002_R2_001.fastq.gz
+  OC43-st-4_S11:
+  - download_raw/NS2052_11_OC43-st-4-R11_L01-L02_L001_ds.9c78299fcb404be286fa8e119cdfa74a/OC43-st-4_S11_L001_R2_001.fastq.gz
+  - download_raw/NS2052_11_OC43-st-4-R11_L01-L02_L002_ds.cca66e57719645e693fbf9ad31392edd/OC43-st-4_S11_L002_R2_001.fastq.gz
+  T0puro1_S1:
+  - download_raw/NS2052_1_T0puro1-R01_L01-L02_L001_ds.99afdb68bfca44dba7fcf4980d6cab0b/T0puro1_S1_L001_R2_001.fastq.gz
+  - download_raw/NS2052_1_T0puro1-R01_L01-L02_L002_ds.0ff92528ba5044c49ba0eba6423e9068/T0puro1_S1_L002_R2_001.fastq.gz
+  T0puro2_S2:
+  - download_raw/NS2052_2_T0puro2-R02_L01-L02_L001_ds.786caed43e9b4288aeba33442dbc0870/T0puro2_S2_L001_R2_001.fastq.gz
+  - download_raw/NS2052_2_T0puro2-R02_L01-L02_L002_ds.090d91d8de1c4f4c8d8eadf0d8d49663/T0puro2_S2_L002_R2_001.fastq.gz
+  T0puro3_S3:
+  - download_raw/NS2052_3_T0puro3-R03_L01-L02_L002_ds.396ad0acde4c480baf99e21c13957fe6/T0puro3_S3_L002_R2_001.fastq.gz
+  - download_raw/NS2052_3_T0puro3-R03_L01-L02_L001_ds.47f8223714c84d109242c95fa5ee4954/T0puro3_S3_L001_R2_001.fastq.gz
+samples:
+  Cov-1_S4:
+  - download_raw/NS2052_4_Cov-1-R04_L01-L02_L002_ds.5a40c063a38b48e1a0092ccaa492ffa1/Cov-1_S4_L002_R1_001.fastq.gz
+  - download_raw/NS2052_4_Cov-1-R04_L01-L02_L001_ds.58da209763174c5a94b4b60060313666/Cov-1_S4_L001_R1_001.fastq.gz
+  Cov-2_S5:
+  - download_raw/NS2052_5_Cov-2-R05_L01-L02_L002_ds.fd72057182cb4b648a2d606031b86036/Cov-2_S5_L002_R1_001.fastq.gz
+  - download_raw/NS2052_5_Cov-2-R05_L01-L02_L001_ds.480d4356c94c4608b27934f5202c4e10/Cov-2_S5_L001_R1_001.fastq.gz
+  Cov-3_S6:
+  - download_raw/NS2052_6_Cov-3-R06_L01-L02_L002_ds.78399b7f7ad544e28cf04f966f24c54f/Cov-3_S6_L002_R1_001.fastq.gz
+  - download_raw/NS2052_6_Cov-3-R06_L01-L02_L001_ds.206a05a6669f4f1b89381f993ef5b0cf/Cov-3_S6_L001_R1_001.fastq.gz
+  Cov-4_S7:
+  - download_raw/NS2052_7_Cov-4-R07_L01-L02_L001_ds.ea1c6b85369c457a9a1edd437dc25fc1/Cov-4_S7_L001_R1_001.fastq.gz
+  - download_raw/NS2052_7_Cov-4-R07_L01-L02_L002_ds.3fc7273413ed46bb9ade5010c5b36f9a/Cov-4_S7_L002_R1_001.fastq.gz
+  OC43-nd-1_S12:
+  - download_raw/NS2052_12_OC43-nd-1-R12_L01-L02_L001_ds.0dde961c3dc34e6b808c44d9550a2682/OC43-nd-1_S12_L001_R1_001.fastq.gz
+  - download_raw/NS2052_12_OC43-nd-1-R12_L01-L02_L002_ds.373bf604f7fe4c30841ba70e4af7b0e7/OC43-nd-1_S12_L002_R1_001.fastq.gz
+  OC43-nd-2_S13:
+  - download_raw/NS2052_13_OC43-nd-2-R13_L01-L02_L001_ds.217ae43e9d8e452da5a5b79d0789917e/OC43-nd-2_S13_L001_R1_001.fastq.gz
+  - download_raw/NS2052_13_OC43-nd-2-R13_L01-L02_L002_ds.71348f0cd2b543e99673d35a3e92863f/OC43-nd-2_S13_L002_R1_001.fastq.gz
+  OC43-nd-3_S14:
+  - download_raw/NS2052_14_OC43-nd-3-R14_L01-L02_L002_ds.65bc1068a7c449308baf871c2a2c6fc4/OC43-nd-3_S14_L002_R1_001.fastq.gz
+  - download_raw/NS2052_14_OC43-nd-3-R14_L01-L02_L001_ds.1ce4a361de734e6c8c7d6eedd01a3e9d/OC43-nd-3_S14_L001_R1_001.fastq.gz
+  OC43-nd-4_S15:
+  - download_raw/NS2052_15_OC43-nd-4-R15_L01-L02_L002_ds.ab74918b18a6450ea3e1e231290cbf0f/OC43-nd-4_S15_L002_R1_001.fastq.gz
+  - download_raw/NS2052_15_OC43-nd-4-R15_L01-L02_L001_ds.8f16026b588640c7bd7989df19f84aa8/OC43-nd-4_S15_L001_R1_001.fastq.gz
+  OC43-st-1_S8:
+  - download_raw/NS2052_8_OC43-st-1-R08_L01-L02_L001_ds.e5296a47aa904f8f8b35a7757bb2136d/OC43-st-1_S8_L001_R1_001.fastq.gz
+  - download_raw/NS2052_8_OC43-st-1-R08_L01-L02_L002_ds.947e79b10b5748e2b87ff78e2bc18301/OC43-st-1_S8_L002_R1_001.fastq.gz
+  OC43-st-2_S9:
+  - download_raw/NS2052_9_OC43-st-2-R09_L01-L02_L001_ds.15ab4a4d6c8e423cad359c464ef6d728/OC43-st-2_S9_L001_R1_001.fastq.gz
+  - download_raw/NS2052_9_OC43-st-2-R09_L01-L02_L002_ds.08c547a3aeab49619ca817fbaacda21c/OC43-st-2_S9_L002_R1_001.fastq.gz
+  OC43-st-3_S10:
+  - download_raw/NS2052_10_OC43-st-3-R10_L01-L02_L001_ds.b05df1616e7b460e88ee6846772b021e/OC43-st-3_S10_L001_R1_001.fastq.gz
+  - download_raw/NS2052_10_OC43-st-3-R10_L01-L02_L002_ds.bafe1453ec5a4710b1f6f1039f42fda2/OC43-st-3_S10_L002_R1_001.fastq.gz
+  OC43-st-4_S11:
+  - download_raw/NS2052_11_OC43-st-4-R11_L01-L02_L001_ds.9c78299fcb404be286fa8e119cdfa74a/OC43-st-4_S11_L001_R1_001.fastq.gz
+  - download_raw/NS2052_11_OC43-st-4-R11_L01-L02_L002_ds.cca66e57719645e693fbf9ad31392edd/OC43-st-4_S11_L002_R1_001.fastq.gz
+  T0puro1_S1:
+  - download_raw/NS2052_1_T0puro1-R01_L01-L02_L001_ds.99afdb68bfca44dba7fcf4980d6cab0b/T0puro1_S1_L001_R1_001.fastq.gz
+  - download_raw/NS2052_1_T0puro1-R01_L01-L02_L002_ds.0ff92528ba5044c49ba0eba6423e9068/T0puro1_S1_L002_R1_001.fastq.gz
+  T0puro2_S2:
+  - download_raw/NS2052_2_T0puro2-R02_L01-L02_L001_ds.786caed43e9b4288aeba33442dbc0870/T0puro2_S2_L001_R1_001.fastq.gz
+  - download_raw/NS2052_2_T0puro2-R02_L01-L02_L002_ds.090d91d8de1c4f4c8d8eadf0d8d49663/T0puro2_S2_L002_R1_001.fastq.gz
+  T0puro3_S3:
+  - download_raw/NS2052_3_T0puro3-R03_L01-L02_L002_ds.396ad0acde4c480baf99e21c13957fe6/T0puro3_S3_L002_R1_001.fastq.gz
+  - download_raw/NS2052_3_T0puro3-R03_L01-L02_L001_ds.47f8223714c84d109242c95fa5ee4954/T0puro3_S3_L001_R1_001.fastq.gz
+
+
+# Provide paired fastq files if pair-end sequencing data is available.
+# paired:
+#     # provide a label and a paths to the paired fastq files for each sample
+#     A: path/to/A_R2.fastq
+#     B: path/to/B_R2.fastq
+#     C:
+#        - path/to/C.1_R2.fastq
+#         - path/to/C.2_R2.fastq
+
+# Specify whether report valid alignments per pair (count when both end reads mapped), when paired fastq files are provided .
+countpair: true
+
+# Instead of providing fastq files, you can also provide your own normalized (or unnormalized) count matrix (Cannot set "samples" as valid at the same time!).
+# If you do not want MAGeCK to normalize the counts, make sure to set up norm_methd to none
+# Support QC from count matrix
+# counts: rawcount/rawcount.txt
+
+# Provide mageck count --day0-label (optional). Multiple labels should be seperated with comma.
+# day0label: plasmid
+
+
+# Provide normalization methods (none, control, median) and a list of negative control sgrnas (if norm_method=control). 
+# These parameters will be applied to mageck_count, mageck_rra and mageck_mle modules.
+# Note that if this option is not specified a default median normalization will be used.
+# norm_method: control
+# control_sgrna: lib/hg19_library_1.aavs1.txt
+
+# Run mle with multi-thread. Default thread number is 1.
+# When this parameter is set (e.g., threads: 4), make sure to specify the cores in running snakemake (snakemake --cores 4)
+threads: 4
+
+# Provide a batch matrix if the samples need to be batch corrected (optional).
+# The format should be as follows (tab-separated):
+# sample          batch   covariate 1 ...
+# Sample 1        1       0           ...
+# Sample 2        2       0           ...
+# Sample 3        2       1           ...
+#
+# The first column must refer to the samples defined above.
+# batchmatrix: path/to/batchmatrix.txt
+#
+
+# copy number variation correction
+# Setting correct_cnv to true will allow CNV correction for both RRA and MLE
+#
+# to overwrite this option, you can use snakemake command line:
+# snakemake --config correct_cnv=true cnv_norm=target/cnv/file
+correct_cnv: false
+cnv_norm: /dev/null
+
+# the following cnv_cell_line is only required when performing CNV correction in RRA
+# it's not required for MLE
+cnv_cell_line: HL60
+
+
+# Additional parameters to run MLE or RRA
+# Note that additional_mle_rra_parameter is no longer used since MLE and RRA should be specified separately.
+# additional_mle_parameter: --max-sgrnapergene-permutation 30
+# additional_rra_parameter: --remove-zero both --additional-rra-parameters "--max-sgrnapergene-permutation 200"
+
+# Configuration of experiments.
+# An experiment defines the comparison that shall be analyzed with MAGeCK.
+# You can define as many experiments as you want.
+# You can define either MAGeCK-RRA or MAGeCK-MLE experiments, but cannot define both in a single configuration file.
+experiments:
+    "VERO_CRISPRko_rra_cov":
+        treatment:
+            - Cov-1_S4
+            - Cov-2_S5
+            - Cov-3_S6
+            - Cov-4_S7
+        control:
+            - T0puro1_S1
+            - T0puro2_S2
+            - T0puro3_S3
+    "VERO_CRISPRko_rra_oc43_1st":
+        treatment:
+            - OC43-st-1_S8
+            - OC43-st-2_S9
+            - OC43-st-3_S10
+            - OC43-st-4_S11
+        control:
+            - T0puro1_S1
+            - T0puro2_S2
+            - T0puro3_S3
+    "VERO_CRISPRko_rra_oc43_2nd":
+        treatment:
+            - OC43-nd-1_S12
+            - OC43-nd-2_S13
+            - OC43-nd-3_S14
+            - OC43-nd-4_S15
+        control:
+            - T0puro1_S1
+            - T0puro2_S2
+            - T0puro3_S3

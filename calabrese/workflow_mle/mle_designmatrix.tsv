@@ -1,0 +1,16 @@
+Samples	baseline	cov_1st	cov_2nd	oc43	
+CaT0puro1	1	0	0	0
+CaT0puro2	1	0	0	0
+CaT0puro3	1	0	0	0
+CaCov-ST1	1	1	0	0
+CaCov-ST2	1	1	0	0
+CaCov-ST3	1	1	0	0
+CaCov-ST4	1	1	0	0
+CaCov-ND1	1	0	1	0
+CaCov-ND2	1	0	1	0
+CaCov-ND3	1	0	1	0
+CaCov-ND4	1	0	1	0
+CaOC43-1	1	0	0	1
+CaOC43-2	1	0	0	1
+CaOC43-3	1	0	0	1
+CaOC43-4	1	0	0	1

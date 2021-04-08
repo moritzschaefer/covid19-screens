@@ -1,0 +1,264 @@
+# General configuration:
+
+# Path to library design file (csv or tab-separated txt format, columns: id, sequence, gene)
+library: brunello.txt
+# Species to use for linkouts in VISPR (e.g. mus_musculus, homo_sapiens, ...)
+species: homo_sapiens
+# Genome assembly to use for linkouts in VISPR (e.g. hg19, hg38, mm9, mm10, ...)
+assembly: hg38
+
+# Configuration of knockout target display in VISPR
+targets:
+    # if screening genes, set this to true for proper linkouts to GeneMANIA and Ensembl in VISPR
+    genes: true
+    # file with genes to hide per default in VISPR (optional, one gene per line)
+    #controls: ribosomal_genes.txt
+
+# Configuration of sgRNAs
+sgrnas:
+    # estimate sgRNA knockout efficiency during EM-procedure of MAGeCK-MLE
+    update-efficiency: false
+    # trim the 5 prime end to get rid of barcode sequences in the reads
+    # if a number (instead of AUTO) is specified, use quotes; for example:
+    # trim-5: "0"
+    trim-5: AUTO
+    # specify the length of the sgRNAs (without PAM sequence)
+    len: AUTO
+    # sequencing adapter that shall be removed from reads before processing with MAGeCK (optional)
+    #adapter: ACGGCTAGCTGA
+    #
+    # Use pre-computed sgrnas to annotate the library? By default it's false. 
+    # Only certain assemblies (hg19, hg38, mm9, mm10) and certain sgRNA length (19, 20) are supported
+    annotate-sgrna: false
+    # Use pre-computed sgrna efficiency as an initial value of knockout efficiency?
+    # Need to set annotate-sgrna to true as well. 
+    # If you need the sgRNA efficiency to be updated, set update-efficiency to true
+    annotate-sgrna-efficiency: false
+    # instead of downloading the sgrna annotation library from bitbucket,
+    # provide either the name of the file used for annotation,
+    # or the folder name where MAGeCK-VISPR will search the corresponding annotation library from that folder
+    #annotation-sgrna-file: /dev/null
+    #annotation-sgrna-folder: /src/exome_scan
+
+
+
+
+# ATTENTION: You should and only should choose one type of input file between "samples" and "counts".
+# Configuration of samples (Cannot set "counts" as valid at the same time!)
+samples:
+    # The following sample information was inferred from the given FASTQ files.
+    # Adjust it according to your needs (e.g. providing descriptive sample names and grouping replicates together).
+    T0puro1:
+        - ../NS1994-1_T0puro1-R01_L004_L004_ds.e8f4e65a2ae942808b5db2c599ec2286/T0puro1_S1_L004_R1_001.fastq.gz
+    T0puro2:
+        - ../NS1994-2_T0puro2-R02_L004_L004_ds.5e9f3364e7e74418a75fcbd65004c9c7/T0puro2_S2_L004_R1_001.fastq.gz
+    T0puro3:
+        - ../NS1994-3_T0puro3-R03_L004_L004_ds.790c9610885b449b87d74eb5266d0815/T0puro3_S3_L004_R1_001.fastq.gz
+    T0puro4:
+        - ../NS1994-4_T0puro4-R04_L004_L004_ds.a4e5ad5adf37406ebc0d072c8043c21a/T0puro4_S4_L004_R1_001.fastq.gz
+    Cov-st-1:
+        - ../NS1994-5_Cov-st-1-R06_L004_L004_ds.fc108089f08f497cb2a3e080a8f47e8a/Cov-st-1_S5_L004_R1_001.fastq.gz
+    Cov-st-2:
+        - ../NS1994-6_Cov-st-2-R07_L004_L004_ds.ec5fa8d0667a4da983ea7e76ea344e0c/Cov-st-2_S6_L004_R1_001.fastq.gz
+    Cov-st-3:
+        - ../NS1994-7_Cov-st-3-R08_L004_L004_ds.7698354310ff498db2ce11fa5d16d2f6/Cov-st-3_S7_L004_R1_001.fastq.gz
+    Cov-st-4:
+        - ../NS1994-8_Cov-st-4-R09_L004_L004_ds.fa38ce29f28d429c94d060060b1c7169/Cov-st-4_S8_L004_R1_001.fastq.gz
+    Cov-nd-0point1-1:
+        - ../NS1994-9_Cov-nd-0point1-1-R11_L004_L004_ds.9eb1c5f94f0c48759b382438c7358dca/Cov-nd-0point1-1_S9_L004_R1_001.fastq.gz
+    Cov-nd-0point1-2:
+        - ../NS1994-10_Cov-nd-0point1-2-R12_L004_L004_ds.1611a75a3fef4999adfbb4341505e2c8/Cov-nd-0point1-2_S10_L004_R1_001.fastq.gz
+    Cov-nd-0point1-3:
+        - ../NS1994-11_Cov-nd-0point1-3-R13_L004_L004_ds.be5fc0022e0f47b8914b18eb4adfa2fe/Cov-nd-0point1-3_S11_L004_R1_001.fastq.gz
+    Cov-nd-0point01-1:
+        - ../NS1994-12_Cov-nd-0point01-1-R14_L004_L004_ds.32174349c15145ec869ebb5dd8b93e6c/Cov-nd-0point01-1_S12_L004_R1_001.fastq.gz
+    Cov-nd-0point01-2:
+        - ../NS1994-13_Cov-nd-0point01-2-R15_L004_L004_ds.bcd0a32363874befa6d07437c46cc0cb/Cov-nd-0point01-2_S13_L004_R1_001.fastq.gz
+    Cov-nd-0point01-3:
+        - ../NS1994-14_Cov-nd-0point01-3-R16_L004_L004_ds.4aec94c0bef64d36a9daca9c3a41b83d/Cov-nd-0point01-3_S14_L004_R1_001.fastq.gz
+    Cov-nd-ext-0point1-1:
+        - ../NS1994-15_Cov-nd-ext-0point1-1-R17_L004_L004_ds.75bee88f258a4e648e8447dc7822557c/Cov-nd-ext-0point1-1_S15_L004_R1_001.fastq.gz
+    Cov-nd-ext-0point1-2:
+        - ../NS1994-16_Cov-nd-ext-0point1-2-R20_L004_L004_ds.71dec09895254ab197150d01e6173e2f/Cov-nd-ext-0point1-2_S16_L004_R1_001.fastq.gz
+    Cov-nd-ext-0point1-3:
+        - ../NS1994-17_Cov-nd-ext-0point1-3-R21_L004_L004_ds.58da6fd7bf834260b6b0ea05187f814e/Cov-nd-ext-0point1-3_S17_L004_R1_001.fastq.gz
+    Cov-nd-ext-0point01-1:
+        - ../NS1994-18_Cov-nd-ext-0point01-1-R22_L004_L004_ds.8f0b1c69b706449d83cc0e802c2a498e/Cov-nd-ext-0point01-1_S18_L004_R1_001.fastq.gz
+    Cov-nd-ext-0point01-2:
+        - ../NS1994-19_Cov-nd-ext-0point01-2-R23_L004_L004_ds.a312280fa2b74f438dcb1a0dd3d7cd92/Cov-nd-ext-0point01-2_S19_L004_R1_001.fastq.gz
+    Cov-nd-ext-0point01-3:
+        - ../NS1994-20_Cov-nd-ext-0point01-3-R24_L004_L004_ds.32adcc2c67b7446d8d2af5dff17319d6/Cov-nd-ext-0point01-3_S20_L004_R1_001.fastq.gz
+    OC43-st-1:
+        - ../NS1994-21_OC43-st-1-R25_L004_L004_ds.bdb0ea14a1dc46a6b08cfe58c807db68/OC43-st-1_S21_L004_R1_001.fastq.gz
+    OC43-st-2:
+        - ../NS1994-22_OC43-st-2-R26_L004_L004_ds.b8f3d04f5e1f4da1a21800734eec4234/OC43-st-2_S22_L004_R1_001.fastq.gz
+    OC43-st-3:
+        - ../NS1994-23_OC43-st-3-R27_L004_L004_ds.cb33dfde9cfe4d00bfd0333549860a63/OC43-st-3_S23_L004_R1_001.fastq.gz
+    OC43-st-4:
+        - ../NS1994-24_OC43-st-4-R28_L004_L004_ds.ad14e46e0a114d719ce2aea83e88547c/OC43-st-4_S24_L004_R1_001.fastq.gz
+    OC43-st-5:
+        - ../NS1994-25_OC43-st-5-R29_L004_L004_ds.e11ad0bc0f414719bf674b73bf01dde4/OC43-st-5_S25_L004_R1_001.fastq.gz
+    OC43-nd-0point1-1:
+        - ../NS1994-26_OC43-nd-0point1-1-R30_L004_L004_ds.0fd32f2f87f74ad8875298d8b702b97b/OC43-nd-0point1-1_S26_L004_R1_001.fastq.gz
+    OC43-nd-0point1-2:
+        - ../NS1994-27_OC43-nd-0point1-2-R31_L004_L004_ds.8e1da37a7cea4e7a88c8bced83287103/OC43-nd-0point1-2_S27_L004_R1_001.fastq.gz
+    OC43-nd-0point1-5:
+        - ../NS1994-28_OC43-nd-0point1-5-R32_L004_L004_ds.a1abcff1b2f746baa24c4ac0930c3160/OC43-nd-0point1-5_S28_L004_R1_001.fastq.gz
+    OC43-nd-0point01-1:
+        - ../NS1994-29_OC43-nd-0point01-1-R36_L004_L004_ds.9f77f90eca2040988546ae27abaef1c5/OC43-nd-0point01-1_S29_L004_R1_001.fastq.gz
+    OC43-nd-0point01-2:
+        - ../NS1994-30_OC43-nd-0point01-2-R37_L004_L004_ds.ca6b0e7fe0d945dbb34b733469e1e724/OC43-nd-0point01-2_S30_L004_R1_001.fastq.gz
+    OC43-nd-0point01-5:
+        - ../NS1994-31_OC43-nd-0point01-5-R38_L004_L004_ds.74bc8cde1bce4e1b95ecf43fac7ca823/OC43-nd-0point01-5_S31_L004_R1_001.fastq.gz
+
+
+# Provide paired fastq files if pair-end sequencing data is available.
+# paired:
+#     # provide a label and a paths to the paired fastq files for each sample
+#     A: path/to/A_R2.fastq
+#     B: path/to/B_R2.fastq
+#     C:
+#        - path/to/C.1_R2.fastq
+#         - path/to/C.2_R2.fastq
+
+# Specify whether report valid alignments per pair (count when both end reads mapped), when paired fastq files are provided .
+countpair: false
+
+# Instead of providing fastq files, you can also provide your own normalized (or unnormalized) count matrix (Cannot set "samples" as valid at the same time!).
+# If you do not want MAGeCK to normalize the counts, make sure to set up norm_methd to none
+# Support QC from count matrix
+# counts: rawcount/rawcount.txt
+
+# Provide mageck count --day0-label (optional). Multiple labels should be seperated with comma.
+# day0label: plasmid
+
+
+# Provide normalization methods (none, control, median) and a list of negative control sgrnas (if norm_method=control). 
+# These parameters will be applied to mageck_count, mageck_rra and mageck_mle modules.
+# Note that if this option is not specified a default median normalization will be used.
+# norm_method: control
+# control_sgrna: lib/hg19_library_1.aavs1.txt
+
+# Run mle with multi-thread. Default thread number is 1.
+# When this parameter is set (e.g., threads: 4), make sure to specify the cores in running snakemake (snakemake --cores 4)
+threads: 4
+
+# Provide a batch matrix if the samples need to be batch corrected (optional).
+# The format should be as follows (tab-separated):
+# sample          batch   covariate 1 ...
+# Sample 1        1       0           ...
+# Sample 2        2       0           ...
+# Sample 3        2       1           ...
+#
+# The first column must refer to the samples defined above.
+# batchmatrix: path/to/batchmatrix.txt
+#
+
+# copy number variation correction
+# Setting correct_cnv to true will allow CNV correction for both RRA and MLE
+#
+# to overwrite this option, you can use snakemake command line:
+# snakemake --config correct_cnv=true cnv_norm=target/cnv/file
+correct_cnv: false
+cnv_norm: /dev/null
+
+# the following cnv_cell_line is only required when performing CNV correction in RRA
+# it's not required for MLE
+cnv_cell_line: HL60
+
+
+# Additional parameters to run MLE or RRA
+# Note that additional_mle_rra_parameter is no longer used since MLE and RRA should be specified separately.
+# additional_mle_parameter: --max-sgrnapergene-permutation 30
+# additional_rra_parameter: --remove-zero both --additional-rra-parameters "--max-sgrnapergene-permutation 200"
+
+# Configuration of experiments.
+# An experiment defines the comparison that shall be analyzed with MAGeCK.
+# You can define as many experiments as you want.
+# You can define either MAGeCK-RRA or MAGeCK-MLE experiments, but cannot define both in a single configuration file.
+experiments:
+    "HEK_CRISPRko1_rra_cov_1st":
+        treatment:
+            - Cov-st-1
+            - Cov-st-2
+            - Cov-st-3
+            - Cov-st-4
+        control:
+            - T0puro1
+            - T0puro2
+            - T0puro3
+            - T0puro4
+    "HEK_CRISPRko1_rra_cov_2nd_0.1":
+        treatment:
+            - Cov-nd-0point1-1
+            - Cov-nd-0point1-2
+            - Cov-nd-0point1-3
+        control:
+            - T0puro1
+            - T0puro2
+            - T0puro3
+            - T0puro4
+            - T0puro1
+    "HEK_CRISPRko1_rra_cov_2nd_0.01":
+        treatment:
+            - Cov-nd-0point01-1
+            - Cov-nd-0point01-2
+            - Cov-nd-0point01-3
+        control:
+            - T0puro1
+            - T0puro2
+            - T0puro3
+            - T0puro4
+            - T0puro1
+    "HEK_CRIPSRko1_rra_cov_2nd_ext_0.1":
+        treatment:
+            - Cov-nd-ext-0point1-1
+            - Cov-nd-ext-0point1-2
+            - Cov-nd-ext-0point1-3
+        control:
+            - T0puro1
+            - T0puro2
+            - T0puro3
+            - T0puro4
+    "HEK_CRIPSRko1_rra_cov_2nd_ext_0.01":
+        treatment:
+            - Cov-nd-ext-0point01-1
+            - Cov-nd-ext-0point01-2
+            - Cov-nd-ext-0point01-3
+        control:
+            - T0puro1
+            - T0puro2
+            - T0puro3
+            - T0puro4
+    "HEK_CRIPSRko1_rra_oc43_1st":
+        treatment:
+            - OC43-st-1
+            - OC43-st-2
+            - OC43-st-3
+            - OC43-st-4
+            - OC43-st-5
+        control:
+            - T0puro1
+            - T0puro2
+            - T0puro3
+            - T0puro4
+    "HEK_CRIPSRko1_rra_oc43_2nd_0.1":
+        treatment:
+            - OC43-nd-0point1-1
+            - OC43-nd-0point1-2
+            - OC43-nd-0point1-5
+        control:
+            - T0puro1
+            - T0puro2
+            - T0puro3
+            - T0puro4
+    "HEK_CRIPSRko1_rra_oc43_2nd_0.01":
+        treatment:
+            - OC43-nd-0point01-1
+            - OC43-nd-0point01-2
+            - OC43-nd-0point01-5
+        control:
+            - T0puro1
+            - T0puro2
+            - T0puro3
+            - T0puro4
