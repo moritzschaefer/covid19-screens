@@ -10,4 +10,4 @@ Further documentation can be found in the README-files of each subdirectory.
 
 ## Contribute
 
-You are encouraged to contribute your datasets.. TODO
+You are encouraged to contribute your datasets to this repository such that they can appear on the official website (http://sarscrisprscreens.epi.ufl.edu/). Please open an issue or pull request if you want to add your data to the repository/website.
