@@ -1,6 +1,6 @@
 # Covid19 screening
 
-This repository holds the scripts and source code for the analysis of various SARS-CoV2 pooled CRISPR screens as described in the paper ....
+This repository holds the scripts and source code for the analysis of various SARS-CoV2 pooled CRISPR screens as described in the paper (https://www.biorxiv.org/content/10.1101/2021.06.04.447090v1.full)
 
 The folder brunello1, brunello2, calabrese and vero correspond to the screens performed by us. The other folders correspond to previously published screens.
 
