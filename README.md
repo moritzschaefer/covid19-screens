@@ -8,6 +8,11 @@ Code for comparing the different datasets is found in sars_cov2_analysis.py. The
 
 Further documentation can be found in the README-files of each subdirectory.
 
+# Structure
+
+- experiments/ contains per-author data for individual CRISPR experiments
+- analysis/ contains code used for the integrative analysis as shown/described in the paper
+
 ## Contribute
 
 You are encouraged to contribute your datasets to this repository such that they can appear on the official website (http://sarscrisprscreens.epi.ufl.edu/). Please open an issue or pull request if you want to add your data to the repository/website.

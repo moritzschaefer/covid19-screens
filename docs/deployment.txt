@@ -1,0 +1,3 @@
+To start the web server, run
+
+docker run -it -d -v /home/vispr/sars/:/data -p 80:5000 --cpus="2" --privileged=true --name mageck-vispr davidliwei/mageck-vispr bash
