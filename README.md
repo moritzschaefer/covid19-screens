@@ -12,6 +12,7 @@ Further documentation can be found in the README-files of each subdirectory.
 
 - experiments/ contains per-author data for individual CRISPR experiments
 - analysis/ contains code used for the integrative analysis as shown/described in the paper
+- nginx-certbot contains the server infrastructure. Just run docker-compose up to get up the server
 
 ## Contribute
 
