@@ -1,3 +1,6 @@
 [submodule "vispr"]
 	path = vispr
 	url = git@github.com:moritzschaefer/vispr
+[submodule "nginx-certbot"]
+	path = nginx-certbot
+	url = git@github.com:moritzschaefer/nginx-certbot
